@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180733097-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-180733097-1');
+</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learning to Incorporate Texture Saliency Adaptive Attention to Image Cartoonization</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <style>
+  .section-title {
+    font-family: "Lato"
+  }
+  .authors {
+    font-family: "Lato";
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    font-family: "Lato";
+  }
+  .pub-highlight {
+    color: #e83015;
+    font-family: monaco;
+  }
+  </style>
+  
+
+<!-- cover -->
+  <section>
+    <div class="jumbotron text-center mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 style="font-family: Lato;">Learning to Incorporate Texture Saliency Adaptive Attention to Image Cartoonization</h2->
+            <h4 style="color:#5a6268;">ICML 2022</h4>
+            <!--<div class="pub-highlight">Ranks 1st on Sintel Optical Flow benchmark on Mar. 17th, 2022 </div>-->
+            <hr>
+            <h6> <a href="https://xianggao1102.github.io/CTSS_webpage/" target="_blank">Xiang Gao</a><sup>1</sup>, &nbsp;&nbsp;&nbsp;
+                 Yuqi Zhang<sup>2</sup>, &nbsp;&nbsp;&nbsp;
+                 Yingjie Tian<sup>3</sup>
+            	 <p>
+            	 	<sup>1</sup>School of Computer Science and Technology, University of Chinese Academy of Sciences <br>
+                	<sup>2</sup>School of Mathematical Sciences, University of Chinese Academy of Sciences <br>
+                	<sup>3</sup>Research Center On Fictitious Economy & Data Science
+         
+                </p>
+            <div class="row justify-content-center">
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://proceedings.mlr.press/v162/gao22k/gao22k.pdf"  target="_blank">
+                    <i class="fa fa-file"></i>Paper</a> </p>
+              </div>
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="img/ICML_2022_supp.pdf" role="button"  target="_blank">
+                    <i class="fa fa-file"></i>Supplementary</a> </p>
+              </div>
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/XiangGao1102/CTSS" role="button"  target="_blank">
+                    <i class="fa fa-github-alt"></i>Code</a> </p>
+              </div>
+              <!-- <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://zjueducn-my.sharepoint.com/:f:/g/personal/pengsida_zju_edu_cn/Eo9zn4x_xcZKmYHZNjzel7gBdWf_d4m-pISHhPWB-GZBYw?e=Hf4mz7" role="button">
+                    <i class="fa fa-database"></i> Data</a> </p>
+              </div> -->
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Abstract</h3>
+            <hr style="margin-top:0px">
+          <p class="text-justify">Image cartoonization is recently dominated by generative adversarial networks (GANs) from the perspective of unsupervised image-to-image translation, in which an inherent challenge is to precisely capture and sufficiently transfer characteristic cartoon styles (e.g., clear edges, smooth color shading, abstract fine structures, etc.). Existing advanced models try to enhance cartoonization effect by learning to promote edges adversarially, introducing style transfer loss, or learning to align style from multiple representation space. This paper demonstrates that more distinct and vivid cartoonization effect could be easily achieved with only basic adversarial loss. Observing that cartoon style is more evident in cartoon-texturesalient local image regions, we build a regionlevel adversarial learning branch in parallel with the normal image-level one, which constrains adversarial learning on cartoon-texture-salient local patches for better perceiving and transferring cartoon texture features. To this end, a novel cartoontexture-saliency-sampler (CTSS) module is proposed to dynamically sample cartoon-texturesalient patches from training data. With extensive experiments, we demonstrate that texture saliency adaptive attention in adversarial learning, as a missing ingredient of related methods in image cartoonization, is of significant importance in facilitating and enhancing image cartoon stylization, especially for high-resolution input pictures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+ 
+  
+  
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Architecture</h3>
+            <hr style="margin-top:0px">
+                <img class="img-fluid" src="img/arch.jpg" alt="method architecture" width="90%">
+<p class="text-justify">Overview of our model architecture, as well as details of our proposed cartoon-texture-saliency-sampler (CTSS) module which
+adaptively extracts local image patches with most salient cartoon texture patterns from each mini-batch of input training images.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  
+  
+   <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Contributions</h3>
+            <hr style="margin-top:0px">
+            <p class="text-justify">
+			<b><b>(1) Global style local texture dual adversarial learning:</b> <br>
+			Recent techniques of image cartoonization are dominated by generative adversarial networks (GANs) from the perspective of image-to-image translation. However, it is difficult for existing methods to produce salient cartoon styles for high-resolution input natural images. To solve this problem, we propose a dual adversarial learning framework which applies an image-level global adversarial learning to transfer global cartoon styles, and meanwhile construct a patch-level local adversarial learning branch to capture local salient cartoon textures. Such dual adversarial learning architecture contributes to noticeably more salient cartoon style rendering for large input images.
+			<br>
+			<b>(2) Cartoon-texture-saliency-sampler (CTSS) for adaptive patch sampling:</b> <br>
+			We propose CTSS module to adaptively sample image patches with the most salient cartoon textures from each mini-batch of input training images. The sampled image patches are used as training data of the patch-level local adversarial learning branch. With the texture-saliency-based adaptive attention provided by CTSS, the model's ability of capturing and transferring salient cartoon textures is dramatically enhanced.
+			<br>
+			<b>(3) Training-free texture-saliency-based dynamic visual attention:</b> <br>
+			The CTSS is composed of a series of training-free modules, including convolution-based edge detector, high-pass-filter-based edge amplifier, and edge-guided patch sorting. These modules together realize dynamic localization and sampling of cartoon-texture-salient local image patches, dynamically providing source of training data for the patch-level adversarial learning branch.     </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  
+  
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Results</h3>
+            <hr style="margin-top:0px">
+            <p class="text-justify">Below are showcased image cartoonization results trained on the TWR ("The Wind Rises") dataset. For more cartoonization results as well as results in other cartoon styles, please refer to our <a href="https://proceedings.mlr.press/v162/gao22k/gao22k.pdf">paper</a>.</p>
+                <img class="img-fluid" src="img/twr_results.png" alt="cartoonization results of TWR style" width="100%">
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  
